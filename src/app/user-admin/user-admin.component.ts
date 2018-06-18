@@ -3,13 +3,11 @@ import {CourseServiceClient} from "../services/course.service.client";
 import {Course} from "../models/coruse.model.client";
 
 @Component({
-    selector: 'app-course-grid',
-    templateUrl: './course-grid.component.html',
-    styleUrls: ['./course-grid.component.css']
+    selector: 'app-user-admin',
+    templateUrl: './user-admin.component.html',
+    styleUrls: ['./user-admin.component.css']
 })
-
-export class CourseGridComponent implements OnInit {
-
+export class UserAdminComponent implements OnInit {
     constructor(private service: CourseServiceClient) {
     }
 
@@ -17,8 +15,6 @@ export class CourseGridComponent implements OnInit {
 
     ngOnInit() {
         this.service.findAllCourses()
-            .then(courses => this.courses = courses)
-            .then(() => this.courses = this.courses.filter(course => course.content !== 'private'));
+            .then(courses => this.courses = courses);
     }
-
 }
