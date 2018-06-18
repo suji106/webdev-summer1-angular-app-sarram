@@ -1,10 +1,26 @@
 <div class="container-fluid">
-  <h1>
-    White Board
-  </h1>
+    <h1>
+        White Board
+    </h1>
 
-  <a routerLink="/login">Login</a>
-  <a routerLink="/register">Register</a>
+    <div *ngIf="username === ''; else elseSectionsBlock">
+        <a routerLink="/login">Login</a>
+        <a routerLink="/register">Register</a>
+    </div>
 
-  <app-course-grid></app-course-grid>
+    <ng-template #elseSectionsBlock>
+        <a (click)="logout()">Logout</a>
+        <h5>
+            Student enrolled in sections
+        </h5>
+        <ul class="list-group">
+            <li *ngFor="let enrollment of sections" class="list-group-item">
+                {{enrollment.section.name}}
+                ({{enrollment.section.seats}})
+            </li>
+        </ul>
+    </ng-template>
+
+    <app-course-grid></app-course-grid>
+
 </div>
