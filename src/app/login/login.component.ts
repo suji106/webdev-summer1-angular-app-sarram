@@ -28,21 +28,25 @@ export class LoginComponent implements OnInit {
         });
     }
 
-    login(username, password) {
+    login() {
         this.service
-            .findUsername(username)
+            .findUsername(this.username)
             .then((user) => {
                 if (user === null) {
-                    alert("User does not exist!");
+                    if (this.username.replace(/^\s*/, "").replace(/\s*$/, "") === '') {
+                        alert("User name can't be empty!");
+                    }
+                    else
+                        alert("User does not exist!");
                 }
                 else {
-                    this.service.findUsernameAndPassword(username, password)
+                    this.service.findUsernameAndPassword(this.username, this.password)
                         .then(newUser => {
                             if (newUser !== null) {
                                 this.loginStatus = true;
-                                console.log([username, password]);
+                                console.log([this.username, this.password]);
                                 this.service
-                                    .login(username, password)
+                                    .login(this.username, this.password)
                                     .then(() => {
                                         this.router.navigate(['profile']);
                                     });
@@ -57,5 +61,4 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
     }
-
 }

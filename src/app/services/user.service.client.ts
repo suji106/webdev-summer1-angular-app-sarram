@@ -1,9 +1,9 @@
 export class UserServiceClient {
 
-    findUserById(userId) {
-        return fetch('http://localhost:4000/api/user/' + userId)
-            .then(response => response.json());
-    }
+    // findUserById(userId) {
+    //     return fetch('http://localhost:4000/api/user/' + userId)
+    //         .then(response => response.json());
+    // }
 
     login(username, password) {
         const credentials = {
@@ -43,6 +43,17 @@ export class UserServiceClient {
     findUsernameAndPassword(username, password) {
         return fetch('http://localhost:4000/api/user/' + username + "/" + password + "/user", {})
             .then(response => response.json());
+    }
+
+    update(user) {
+        return fetch('http://localhost:4000/api/user', {
+            method: 'put',
+            body: JSON.stringify(user),
+            credentials: 'include',
+            headers: {
+                'content-type': 'application/json'
+            }
+        });
     }
 
     createUser(username, password) {
