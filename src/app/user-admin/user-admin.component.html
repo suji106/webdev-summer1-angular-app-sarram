@@ -1,3 +1,14 @@
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<style>
+    body {
+        padding-top: 50px;
+    }
+
+    form {
+        margin-bottom: 50px;
+    }
+</style>
+
 <div class="row">
     <div class="col-4">
         <ul class="list-group">
@@ -5,9 +16,25 @@
             <li *ngFor="let course of courses"
                 class="list-group-item wbdv">
                 <a routerLink="/course/{{course.id}}/section">
-                    {{course.title}}</a>
+                    {{course.title}}
+                </a>
+                <h6>
+                    {{course.contentType}} course
+                </h6>
+                <div *ngIf="course.contentType === 'public';">
+                    <button (click)="changeContentType(course.id, 'private')" type="submit" class="float-right">
+                        Set to private Class?
+                    </button>
+                </div>
+                <div *ngIf="course.contentType === 'private';">
+                    <button (click)="changeContentType(course.id, 'public')" type="submit" class="float-right">
+                        Set to public Class?
+                    </button>
+                </div>
             </li>
         </ul>
+        <a (click)="logout()">Logout</a>
+        <a routerLink="/home">Home</a>
     </div>
     <div class="col-8">
         <app-section-viewer></app-section-viewer>

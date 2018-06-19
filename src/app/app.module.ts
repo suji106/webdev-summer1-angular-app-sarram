@@ -24,6 +24,7 @@ import {UserServiceClient} from "./services/user.service.client";
 import {SectionServiceClient} from "./services/section.service.client";
 import {UserAdminComponent} from './user-admin/user-admin.component';
 import {SectionViewerComponent} from './section-viewer/section-viewer.component';
+import { SectionListComponent } from './section-list/section-list.component';
 
 @NgModule({
     declarations: [
@@ -40,7 +41,8 @@ import {SectionViewerComponent} from './section-viewer/section-viewer.component'
         RegisterComponent,
         ProfileComponent,
         SectionViewerComponent,
-        UserAdminComponent
+        UserAdminComponent,
+        SectionListComponent
     ],
     imports: [
         BrowserModule,

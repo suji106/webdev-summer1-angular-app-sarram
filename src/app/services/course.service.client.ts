@@ -8,6 +8,24 @@ export class CourseServiceClient {
 
     findCourseById(courseId) {
         return fetch(this.COURSE_URL + '/' + courseId)
-            .then(response => response.json());
+            .then(response => {
+                const resp_json = response.json();
+                console.log(resp_json);
+                return resp_json;
+            });
+    }
+
+    updateCourse(course) {
+        console.log(course);
+        return fetch(this.COURSE_URL, {
+            method: 'post',
+            body: JSON.stringify(course),
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+        .then(response => {
+            return response.json();
+        });
     }
 }

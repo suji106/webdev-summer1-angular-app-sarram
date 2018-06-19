@@ -44,10 +44,12 @@ export class SectionViewerComponent implements OnInit {
             }).then(() => {
             this.sectionName = "";
             this.maxSeats = "";
+            this.seats = "";
         });
     }
 
     updateSection(newName, newSeats) {
+        console.log(this.selectedSection);
         const newRem = newSeats - this.selectedSection.maxSeats + this.selectedSection.seats;
         this
             .service
@@ -67,7 +69,11 @@ export class SectionViewerComponent implements OnInit {
             .createSection(this.courseId, sectionName, maxSeats)
             .then(() => {
                 this.loadSections(this.courseId);
-            });
+            }).then(() => {
+            this.sectionName = "";
+            this.maxSeats = "";
+            this.seats = "";
+        });
     }
 
     editSection(section) {
@@ -79,5 +85,4 @@ export class SectionViewerComponent implements OnInit {
 
     ngOnInit() {
     }
-
 }

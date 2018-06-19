@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
 
     username;
     password;
+    loginStatus = false;
 
     constructor(private router: Router,
                 private service: UserServiceClient) {
@@ -28,14 +29,33 @@ export class LoginComponent implements OnInit {
     }
 
     login(username, password) {
-        console.log([username, password]);
         this.service
-            .login(username, password)
-            .then(() => {
-                this.router.navigate(['profile']);
+            .findUsername(username)
+            .then((user) => {
+                if (user === null) {
+                    alert("User does not exist!");
+                }
+                else {
+                    this.service.findUsernameAndPassword(username, password)
+                        .then(newUser => {
+                            if (newUser !== null) {
+                                this.loginStatus = true;
+                                console.log([username, password]);
+                                this.service
+                                    .login(username, password)
+                                    .then(() => {
+                                        this.router.navigate(['profile']);
+                                    });
+                            }
+                            else {
+                                alert("Entered password is wrong");
+                            }
+                        });
+                }
             });
     }
 
     ngOnInit() {
     }
+
 }

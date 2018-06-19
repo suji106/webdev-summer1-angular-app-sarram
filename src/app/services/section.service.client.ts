@@ -19,7 +19,8 @@ export class SectionServiceClient {
     }
 
     updateSection(sectionId, newName, newMax, newRem) {
-        const section = {id: sectionId, newName: newName, newMax: newMax, newRem: newRem};
+        const section = {id : sectionId, newName: newName, newMax: newMax, newRem: newRem};
+        console.log(section);
         return fetch('http://localhost:4000/api/section' + '/' + sectionId, {
             method: 'put',
             body: JSON.stringify(section),
@@ -43,7 +44,8 @@ export class SectionServiceClient {
 
     createSection(courseId, name, maxSeats) {
         const seats = maxSeats;
-        const section = {courseId, name, seats};
+        const section = {courseId, name, maxSeats, seats};
+        console.log(section);
         return fetch(this.SECTION_URL.replace('COURSEID', courseId), {
             method: 'post',
             body: JSON.stringify(section),

@@ -14,14 +14,13 @@ export class WhiteBoardComponent implements OnInit {
 
     sections = [];
     username = '';
-    courseIds = [];
     courses = [];
 
     constructor(private router: Router,
                 private service: UserServiceClient,
                 private sectionService: SectionServiceClient,
                 private courseService: CourseServiceClient) {
-        console.log("contructor");
+        console.log("constructor");
         this.getUniqueCourses = this.getUniqueCourses.bind(this);
     }
 

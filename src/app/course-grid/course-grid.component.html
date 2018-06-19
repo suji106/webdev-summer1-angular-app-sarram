@@ -7,9 +7,18 @@
                 <h5 class="card-title">{{course.title}}</h5>
                 <p class="card-text">This is a course! Select an option :)</p>
                 <a routerLink="/course/{{course.id}}"
-                class="btn btn-primary">Course Details</a>
-                <a routerLink="/course/{{course.id}}/section"
-                   class="btn btn-primary">Enroll</a>
+                   class="btn btn-primary">Course Details</a>
+
+                <div *ngIf="login_check !== ''; else elseSectionsBlock">
+                    <a routerLink="/course/{{course.id}}/section"
+                       class="btn btn-primary">Enroll
+                    </a>
+                </div>
+                <ng-template #elseSectionsBlock>
+                    <a routerLink="/login"
+                       class="btn btn-primary">Enroll
+                    </a>
+                </ng-template>
             </div>
         </div>
     </div>
