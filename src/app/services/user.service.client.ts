@@ -41,7 +41,14 @@ export class UserServiceClient {
     }
 
     findUsernameAndPassword(username, password) {
-        return fetch('http://localhost:4000/api/user/' + username + "/" + password + "/user", {})
+        return fetch('http://localhost:4000/api/user/' + username + "/username", {
+            method: 'post',
+            body: JSON.stringify({password}),
+            credentials: 'include',
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
             .then(response => response.json());
     }
 
