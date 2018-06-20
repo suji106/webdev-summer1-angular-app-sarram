@@ -16,14 +16,16 @@ export class UserServiceClient {
             credentials: 'include',
             headers: {
                 'content-type': 'application/json'
-            }
+            },
+            mode: 'cors'
         });
     }
 
     logout() {
         return fetch('http://localhost:4000/api/logout', {
             method: 'post',
-            credentials: 'include'
+            credentials: 'include',
+            mode: 'cors'
         });
     }
 
@@ -31,6 +33,7 @@ export class UserServiceClient {
         return fetch('http://localhost:4000/api/profile',
             {
                 credentials: 'include', // include, same-origin, *omit
+                mode: 'cors'
             })
             .then(response => response.json());
     }
@@ -47,7 +50,8 @@ export class UserServiceClient {
             credentials: 'include',
             headers: {
                 'content-type': 'application/json'
-            }
+            },
+            mode: 'cors'
         })
             .then(response => response.json());
     }
@@ -59,7 +63,8 @@ export class UserServiceClient {
             credentials: 'include',
             headers: {
                 'content-type': 'application/json'
-            }
+            },
+            mode: 'cors'
         });
     }
 
@@ -74,7 +79,8 @@ export class UserServiceClient {
             method: 'post',
             headers: {
                 'content-type': 'application/json'
-            }
+            },
+            mode: 'cors'
         });
     }
 }
