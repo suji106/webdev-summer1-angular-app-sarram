@@ -39,7 +39,7 @@ export class UserServiceClient {
     }
 
     findUsername(username) {
-        return fetch('http://localhost:4000/api/user/' + username + "/username", {})
+        return fetch('http://localhost:4000/api/user/' + username + "/username", {mode: 'cors'})
             .then(response => response.json());
     }
 
