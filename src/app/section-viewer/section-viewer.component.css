@@ -1,4 +1,21 @@
-#wbdv-table-heading {
-  background-color: maroon;
-  color: white;
+h3{
+    color: darkorange;
+    text-align: center;
+}
+
+td {
+    color: darkgreen;
+    font-size: 15px;
+    text-align: center;
+}
+
+#wbdv-table-header {
+    background-color: brown;
+    color: white;
+}
+
+.fa {
+    color: purple;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 1.5em;
 }

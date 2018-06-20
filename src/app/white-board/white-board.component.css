@@ -1,0 +1,21 @@
+h2{
+    text-align: center;
+    color: brown;
+    margin: 30px;
+}
+
+h5{
+    color: #6d0054;
+}
+
+.card {
+    margin: 20px;
+    color: maroon;
+    background: orange;
+}
+
+.btn{
+    color: black;
+    float: right;
+    margin: 5px;
+}

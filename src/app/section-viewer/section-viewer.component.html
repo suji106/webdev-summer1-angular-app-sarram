@@ -1,19 +1,11 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
 <div class="container">
-    <h1 id="title">Sections</h1>
+    <h3 id="title">Sections</h3>
     <table class="table table-hover">
         <thead>
-        <tr id="wbdv-table-heading">
+        <tr id="wbdv-table-header">
             <th>Name</th>
-            <th>MaxSeats</th>
-            <th>Remaining</th>
+            <th>Maximum Capacity</th>
+            <th>Remaining Seats</th>
             <th></th>
         </tr>
         <tr>
@@ -31,12 +23,8 @@
             </td>
             <td>
                 <span class="float-right" style="white-space: nowrap">
-                    <button class="fa-2x fa fa-plus " (click)="createSection()">
-                        Create
-                    </button>
-                    <button class="fa-2x fa fa-check wbdv-update" (click)="updateSection(sectionName, maxSeats)">
-                        Update
-                    </button>
+                    <i class="fa-2x fa fa-plus " (click)="createSection()"></i>
+                    <i class="fa-2x fa fa-check wbdv-update" (click)="updateSection(sectionName, maxSeats)"></i>
                 </span>
             </td>
         </tr>
@@ -48,8 +36,8 @@
             <td> {{section.seats}}</td>
             <td>
                 <span class="float-right">
-                    <button (click)="editSection(section)">Edit</button>
-                    <button (click)="deleteSection(section._id)">Delete</button>
+                    <i class="far fa-edit fa" (click)="editSection(section)"></i>
+                    <i class="far fa-trash fa" (click)="deleteSection(section._id)"></i>
                 </span>
             </td>
         </tr>

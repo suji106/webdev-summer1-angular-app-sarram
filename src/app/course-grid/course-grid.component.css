@@ -1,3 +1,14 @@
+h4{
+    color: navy;
+    padding-left: 30px;
+}
+
 .card {
-  margin-bottom: 15px;
+    margin: 20px;
+    color: #800b12;
+    background: #a7c1be;
+}
+
+.btn {
+    margin: 5px;
 }

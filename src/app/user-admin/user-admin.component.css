@@ -1,7 +1,32 @@
-#toggler {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+.row {
+    padding: 30px;
+}
+
+h2 {
+    padding: 20px;
+    color: brown;
+    text-align: center;
+}
+
+h3 {
+    color: black;
+}
+
+h6 {
+    color: purple;
+}
+
+.list-group {
+    text-align: center;
+
+}
+
+.btn{
+    color: black;
+    margin: 10px;
+}
+
+.typer {
+    color: purple;
+    margin: 10px;
 }
