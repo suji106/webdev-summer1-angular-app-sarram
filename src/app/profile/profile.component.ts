@@ -35,6 +35,16 @@ export class ProfileComponent implements OnInit {
         });
     }
 
+    unroll(section) {
+        this.sectionService
+            .unrollStudentInSection(section._id)
+            .then(() => {
+                this.sectionService
+                    .findSectionsForStudent()
+                    .then(sections => this.sections = sections);
+            });
+    }
+
     logout() {
         this.service
             .logout()

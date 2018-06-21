@@ -25,6 +25,11 @@
         <li *ngFor="let enrollment of sections" class="list-group-item">
             {{enrollment.section.name}}
             ({{enrollment.section.seats}})
+            <div class="float-right">
+                <!--Grade {{enrollment.section.grade}}-->
+            </div>
+            <button (click)="unroll(enrollment.section)"
+                    class="btn btn-primary">Unroll</button>
         </li>
     </ul>
     <h5>
