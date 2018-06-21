@@ -1,7 +1,7 @@
 export class UserServiceClient {
 
     // findUserById(userId) {
-    //     return fetch('http://s-arram-angular.herokuapp.com/api/user/' + userId)
+    //     return fetch('https://s-arram-node.herokuapp.com/api/user/' + userId)
     //         .then(response => response.json());
     // }
 
@@ -10,7 +10,7 @@ export class UserServiceClient {
             username: username,
             password: password
         };
-        return fetch('http://s-arram-angular.herokuapp.com/api/login', {
+        return fetch('https://s-arram-node.herokuapp.com/api/login', {
             method: 'post',
             body: JSON.stringify(credentials),
             credentials: 'include',
@@ -22,7 +22,7 @@ export class UserServiceClient {
     }
 
     logout() {
-        return fetch('http://s-arram-angular.herokuapp.com/api/logout', {
+        return fetch('https://s-arram-node.herokuapp.com/api/logout', {
             method: 'post',
             credentials: 'include',
             mode: 'cors'
@@ -30,7 +30,7 @@ export class UserServiceClient {
     }
 
     profile() {
-        return fetch('http://s-arram-angular.herokuapp.com/api/profile',
+        return fetch('https://s-arram-node.herokuapp.com/api/profile',
             {
                 credentials: 'include', // include, same-origin, *omit
                 mode: 'cors'
@@ -39,12 +39,12 @@ export class UserServiceClient {
     }
 
     findUsername(username) {
-        return fetch('http://s-arram-angular.herokuapp.com/api/user/' + username + "/username", {mode: 'cors'})
+        return fetch('https://s-arram-node.herokuapp.com/api/user/' + username + "/username", {mode: 'cors'})
             .then(response => response.json());
     }
 
     findUsernameAndPassword(username, password) {
-        return fetch('http://s-arram-angular.herokuapp.com/api/user/' + username + "/username", {
+        return fetch('https://s-arram-node.herokuapp.com/api/user/' + username + "/username", {
             method: 'post',
             body: JSON.stringify({password}),
             credentials: 'include',
@@ -57,7 +57,7 @@ export class UserServiceClient {
     }
 
     update(user) {
-        return fetch('http://s-arram-angular.herokuapp.com/api/user', {
+        return fetch('https://s-arram-node.herokuapp.com/api/user', {
             method: 'put',
             body: JSON.stringify(user),
             credentials: 'include',
@@ -73,7 +73,7 @@ export class UserServiceClient {
             username: username,
             password: password
         };
-        return fetch('http://s-arram-angular.herokuapp.com/api/user', {
+        return fetch('https://s-arram-node.herokuapp.com/api/user', {
             body: JSON.stringify(user),
             credentials: 'include', // include, same-origin, *omit
             method: 'post',

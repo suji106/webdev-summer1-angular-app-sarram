@@ -1,9 +1,9 @@
 export class SectionServiceClient {
 
-    SECTION_URL = 'http://s-arram-angular.herokuapp.com/api/course/COURSEID/section';
+    SECTION_URL = 'https://s-arram-node.herokuapp.com/api/course/COURSEID/section';
 
     findSectionsForStudent() {
-        const url = 'http://s-arram-angular.herokuapp.com/api/student/section';
+        const url = 'https://s-arram-node.herokuapp.com/api/student/section';
         return fetch(url, {
             credentials: 'include'
         })
@@ -11,7 +11,7 @@ export class SectionServiceClient {
     }
 
     enrollStudentInSection(sectionId) {
-        const url = 'http://s-arram-angular.herokuapp.com/api/section/' + sectionId + '/enrollment';
+        const url = 'https://s-arram-node.herokuapp.com/api/section/' + sectionId + '/enrollment';
         return fetch(url, {
             method: 'post',
             credentials: 'include'
@@ -19,7 +19,7 @@ export class SectionServiceClient {
     }
 
     unrollStudentInSection(sectionId) {
-        const url = 'http://s-arram-angular.herokuapp.com/api/section/' + sectionId + '/enrollment';
+        const url = 'https://s-arram-node.herokuapp.com/api/section/' + sectionId + '/enrollment';
         return fetch(url, {
             method: 'delete',
             credentials: 'include'
@@ -29,7 +29,7 @@ export class SectionServiceClient {
     updateSection(sectionId, newName, newMax, newRem) {
         const section = {id: sectionId, newName: newName, newMax: newMax, newRem: newRem};
         console.log(section);
-        return fetch('http://s-arram-angular.herokuapp.com/api/section' + '/' + sectionId, {
+        return fetch('https://s-arram-node.herokuapp.com/api/section' + '/' + sectionId, {
             method: 'put',
             body: JSON.stringify(section),
             credentials: 'include',
@@ -40,7 +40,7 @@ export class SectionServiceClient {
     }
 
     deleteSection(sectionId) {
-        return fetch('http://s-arram-angular.herokuapp.com/api/section' + '/' + sectionId, {
+        return fetch('https://s-arram-node.herokuapp.com/api/section' + '/' + sectionId, {
             method: 'delete'
         });
     }
