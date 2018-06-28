@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <h2>Quizzes</h2>
+
+  <ul class="list-group">
+    <li *ngFor="let quiz of quizzes" class="list-group-item">
+      {{quiz.name}}
+
+      <a routerLink="/quiz/{{quiz._id}}/submissions" class="btn btn-info float-right">Submissions</a>
+      <a routerLink="/quiz/{{quiz._id}}" class="btn btn-success float-right">Take</a>
+    </li>
+  </ul>
+
+</div>

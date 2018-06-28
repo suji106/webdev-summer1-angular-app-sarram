@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <h2>Quiz: {{quizId}}</h2>
+  <ul class="list-group">
+    <li *ngFor="let question of quiz.questions" class="list-group-item">
+      <div [ngSwitch]="question.type">
+        <div *ngSwitchCase="'essay'">
+          <h1>Essay Question</h1>
+          <textarea [(ngModel)]="submission[question._id]" class="form-control"></textarea>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <button (click)="submit(submission)">Submit</button>
+</div>
